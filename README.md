@@ -5,7 +5,7 @@
 <hr>
 
 Schön, dass Du dabei bist!  
-Merke dir schon einmal dieses Repository: https://github.com/angular-schule/2017-03-angular-workshop-mannheim
+Merke dir schon einmal dieses Repository: https://github.com/angular-schule/2017-03-angular-workshop-mannheim  
 Damit wir am Donnerstag gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.
 
 
@@ -67,7 +67,7 @@ Wenn bei allen Teilnehmern "app works!" erscheint, können wir ohne Zeitverlust 
 
 ### Ich freue mich auf Donnerstag! 
 
-Bei Fragen wende Dich einfach direkt an mich:
+Bei Fragen wende Dich einfach direkt an mich:  
 johannes.hoppe@haushoppe-its.de
 
 <hr>
