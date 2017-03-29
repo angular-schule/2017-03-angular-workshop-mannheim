@@ -54,7 +54,7 @@ Wechsel dazu in dein Arbeitsverzeichnis und führe aus:
 ```
 ng new book-rating --routing
 cd book-rating
-ng serve
+ng serve -o
 ```
 
 Achtung! Die Installation kann sehr lange dauern.
