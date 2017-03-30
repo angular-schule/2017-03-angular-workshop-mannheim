@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Book } from './../shared/book';
+
 @Component({
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  books: string[];
+  books: Book[];
 
   constructor() { }
 
   ngOnInit() {
-    this.books = ['Angular', 'Das andere Buch', 'AngularJS'];
+    this.books = [
+      new Book('000', 'Angular', 'Zurück in die Zukunft', 2),
+      new Book('111', 'AngularJS 1.x', 'Oldie but Goldie', 3),
+      new Book('222', 'DAs andere Buch', 'Blah')
+    ];
   }
-
 }
 
