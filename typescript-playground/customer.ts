@@ -6,4 +6,8 @@ export class Customer {
     hallo() {
         console.log(`hello world ${this.id}!`);
     }
+
+    test() {
+        
+    }
 }
