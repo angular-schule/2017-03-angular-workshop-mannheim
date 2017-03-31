@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, AfterViewInit, OnDestroy } from '@angular/core';
+import { BookComponent } from './../book/book.component';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
 
 import { Book } from './../shared/book';
 
@@ -7,8 +10,11 @@ import { Book } from './../shared/book';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit,
+  AfterViewInit, OnDestroy {
   books: Book[];
+
+  @ViewChildren(BookComponent) bookComponents;
 
   constructor() { }
 
@@ -21,6 +27,23 @@ export class DashboardComponent implements OnInit {
       new Book('222', 'DAs andere Buch', 'Blah')
     ];
     this.reorderBooks(null);
+  }
+
+  ngAfterViewInit() {
+    this.bookComponents.forEach((bookComponent: BookComponent) => {
+      bookComponent.rated
+        .filter(b => b.title === 'Angular')
+        .map(b => b.isbn)
+        .subscribe((book) => {
+          console.log(book);
+        });
+    });
+  }
+
+  ngOnDestroy() {
+    this.bookComponents.forEach((bookComponent: BookComponent) => {
+      bookComponent.rated.unsubscribe();
+    });
   }
 
   reorderBooks(book: Book) {
