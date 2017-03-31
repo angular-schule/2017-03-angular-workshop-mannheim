@@ -18,8 +18,11 @@ export class DashboardComponent implements OnInit,
 
   constructor() { }
 
-  add(isbn: string, title: string, desc: string) {
-    this.books.push(new Book(isbn, title, desc));
+  add(isbn: HTMLFormElement,
+      title: HTMLFormElement,
+      desc: HTMLFormElement) {
+    this.books.push(new Book(isbn.value, title.value, desc.value));
+    isbn.value = title.value = desc.value = '';
     this.reorderBooks();
   }
 
