@@ -13,11 +13,8 @@ import { Book } from './../shared/book';
 export class DashboardComponent implements OnInit {
   books: Book[];
 
-  add(isbn: HTMLFormElement,
-      title: HTMLFormElement,
-      desc: HTMLFormElement) {
-    this.books.push(new Book(isbn.value, title.value, desc.value));
-    isbn.value = title.value = desc.value = '';
+  add(book: Book) {
+    this.books.push(book);
     this.reorderBooks();
   }
 

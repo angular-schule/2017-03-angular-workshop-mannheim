@@ -1,3 +1,16 @@
-<p>
-  create-book works!
-</p>
+<form>
+  <div class="form-group">
+    ISBN:
+    <input class="form-control" name="isbn" #isbn>
+  </div>
+  <div class="form-group">
+    Title:
+    <input class="form-control" name="title" #title>
+  </div>
+
+  <div class="form-group">
+    Description:
+    <textarea name="description" class="form-control" #description></textarea>
+  </div>
+  <button class="btn btn-danger" (click)="add(isbn,title,description)">Save</button>
+</form>
