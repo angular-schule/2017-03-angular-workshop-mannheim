@@ -10,13 +10,15 @@ import { Book } from '../shared/book';
 export class BookComponent implements OnInit {
 
   @Input() book: Book;
-  @Output() rated = new EventEmitter<Book>();
+  @Output() rated = new EventEmitter<Book>(true);
 
   constructor() { }
 
   rateDown() {
     this.book.rateDown();
+    console.log('1');
     this.rated.emit(this.book);
+    console.log('3');
   }
 
   rateUp() {
