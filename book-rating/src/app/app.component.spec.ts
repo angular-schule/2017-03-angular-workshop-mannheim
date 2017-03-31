@@ -1,36 +1,42 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 
-xdescribe('AppComponent', () => {
+describe('AppComponent', () => {
+
+  let fixture, app;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+      imports: [],
+      declarations: [AppComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    })
+    .compileComponents()
+    .then(() => {
+      fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      app = fixture.debugElement.componentInstance;
+    });
   }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-
-  it(`should have as title 'app works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should write xxx on button click', () => {
+    fixture.debugElement.nativeElement.querySelector('button').click();
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  }));
+    expect(app.title).toContain('XXX');
+  });
+
+  it('should create the app', () => {
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'Book Rating'`, () => {
+    expect(app.title).toEqual('Book Rating');
+  });
+
+  it('should render title in a h1 tag', () => {
+    const nativeEl = fixture.debugElement.nativeElement;
+    expect(nativeEl.querySelector('h1').textContent).toContain('Book Rating');
+  });
 });
