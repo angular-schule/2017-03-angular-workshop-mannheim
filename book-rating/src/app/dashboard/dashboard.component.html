@@ -1,9 +1,19 @@
 <form>
-  ISBN: <input name="isbn" #isbn><br>
-  Title: <input name="title" #title><br>
-  Description: <textarea name="description" #description></textarea>
-
-  <button (click)="add(isbn, title, description)">Add</button>
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input class="form-control" name="isbn" #isbn>
+  </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control" name="title" #title>
+  </div>
+  <div class="form-group">
+    <label for="link">Description</label>
+    <textarea class="form-control" name="description" #description></textarea>
+  </div>
+  <div class="form-group">
+   <button (click)="add(isbn, title, description)" class="btn btn-danger">Submit</button>
+  </div>
 </form>
 
 <hr>
