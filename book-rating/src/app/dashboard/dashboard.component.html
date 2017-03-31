@@ -1,10 +1,18 @@
+<form>
+  ISBN: <input name="isbn" #isbn><br>
+  Title: <input name="title" #title><br>
+  Description: <textarea name="description" #description></textarea>
+
+  <button (click)="add(
+    isbn.value,
+    title.value,
+    description.value)">Add</button>
+</form>
+
+<hr>
+
 <br-book
   *ngFor="let b of books; let i = index"
   [book]="b"
-  (rated)="reorderBooks($event)"
+  (rated)="reorderBooks()"
   ></br-book>
-
-
-<input type="text" value="Hallo" #myInputField>
-
-{{ myInputField.value }}

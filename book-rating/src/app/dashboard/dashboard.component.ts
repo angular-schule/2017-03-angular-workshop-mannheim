@@ -18,6 +18,11 @@ export class DashboardComponent implements OnInit,
 
   constructor() { }
 
+  add(isbn: string, title: string, desc: string) {
+    this.books.push(new Book(isbn, title, desc));
+    this.reorderBooks();
+  }
+
   ngOnInit() {
 
     // hier immer neu sortieren!
@@ -26,7 +31,7 @@ export class DashboardComponent implements OnInit,
       new Book('111', 'AngularJS 1.x', 'Oldie but Goldie', 3),
       new Book('222', 'DAs andere Buch', 'Blah')
     ];
-    this.reorderBooks(null);
+    this.reorderBooks();
   }
 
   ngAfterViewInit() {
@@ -46,7 +51,7 @@ export class DashboardComponent implements OnInit,
     });
   }
 
-  reorderBooks(book: Book) {
+  reorderBooks() {
     this.books.sort((a, b) => b.rating - a.rating);
   }
 }
