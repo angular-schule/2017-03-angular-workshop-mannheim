@@ -12,7 +12,13 @@ export class BookComponent implements OnInit {
   @Input() book: Book;
   constructor() { }
 
-  // !!!!! HIER
+  rateDown() {
+    this.book.rateDown();
+  }
+
+  rateUp() {
+    this.book.rateUp();
+  }
 
   ngOnInit() {
   }
