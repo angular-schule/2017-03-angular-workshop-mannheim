@@ -8,7 +8,9 @@
 
   <button (click)="rateDown()"
           class="btn btn-default glyphicon glyphicon-thumbs-down"
-          [disabled]="book.rating < 1">
+          [disabled]="book.rating < 1"
+          [ngClass]="{ cool: book.rating == 2,
+                       superCool: book.rating == 3 }">
   </button>
 
   <button (click)="rateUp()"
