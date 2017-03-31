@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
   }
 
   reorderBooks(book: Book) {
-    console.log('2');
     this.books.sort((a, b) => b.rating - a.rating);
   }
 }
