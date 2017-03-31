@@ -1,3 +1,5 @@
 <br-book
   *ngFor="let b of books; let i = index"
-  [book]="b"></br-book>
+  [book]="b"
+  (rated)="reorderBooks($event)"
+  ></br-book>
