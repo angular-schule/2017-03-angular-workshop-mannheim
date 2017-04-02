@@ -31,9 +31,9 @@ var DashboardComponent = (function () {
     };
     DashboardComponent.prototype.ngOnInit = function () {
         this.books = [
-            new __WEBPACK_IMPORTED_MODULE_3__shared_book__["a" /* Book */]('000', 'Angular', 'Zurück in die Zukunft', 2),
-            new __WEBPACK_IMPORTED_MODULE_3__shared_book__["a" /* Book */]('111', 'AngularJS 1.x', 'Oldie but Goldie', 3),
-            new __WEBPACK_IMPORTED_MODULE_3__shared_book__["a" /* Book */]('222', 'DAs andere Buch', 'Blah')
+            new __WEBPACK_IMPORTED_MODULE_3__shared_book__["a" /* Book */]('9783864903571', 'Angular', 'Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript - ab Angular 4', 5),
+            new __WEBPACK_IMPORTED_MODULE_3__shared_book__["a" /* Book */]('9783864901546', 'AngularJS', 'Eine praktische Einführung in das JavaScript-Framework', 3),
+            new __WEBPACK_IMPORTED_MODULE_3__shared_book__["a" /* Book */]('9783446426825', 'Die Kunst des klaren Denkens', '52 Denkfehler, die Sie besser anderen überlassen')
         ];
         this.reorderBooks();
     };
@@ -146,7 +146,7 @@ module.exports = module.exports.toString();
 /***/ 162:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  <svg height=\"100\" style=\"vertical-align: middle;\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0\" y=\"0\" viewBox=\"0 0 230 250\" xml:space=\"preserve\"><style type=\"text/css\">.st0{fill:#DD0031;} .st1{fill:#C3002F;} .st2{fill:#FFFFFF;}</style><polygon class=\"st0\" points=\"125 30 125 30 125 30 31.9 63.2 46.1 186.3 125 230 125 230 125 230 203.9 186.3 218.1 63.2 \"/><polygon class=\"st1\" points=\"125 30 125 52.2 125 52.1 125 153.4 125 153.4 125 230 125 230 203.9 186.3 218.1 63.2 125 30 \"/><path class=\"st2\" d=\"M125 52.1L66.8 182.6h0 21.7 0l11.7-29.2h49.4l11.7 29.2h0 21.7 0L125 52.1 125 52.1 125 52.1 125 52.1 125 52.1zM142 135.4H108l17-40.9L142 135.4z\"/></svg>\n  {{title}}\n</h1>\n\n<button (click)=\"title = 'XXX'\">Klick mich</button>\n\n<br-dashboard></br-dashboard>\n\n<!--<router-outlet></router-outlet>-->\n"
+module.exports = "<h1>\n  <svg height=\"120\" style=\"vertical-align: middle;margin-left:-20px;margin-bottom:10px;\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0\" y=\"0\" viewBox=\"0 0 230 250\" xml:space=\"preserve\"><style type=\"text/css\">.st0{fill:#DD0031;} .st1{fill:#C3002F;} .st2{fill:#FFFFFF;}</style><polygon class=\"st0\" points=\"125 30 125 30 125 30 31.9 63.2 46.1 186.3 125 230 125 230 125 230 203.9 186.3 218.1 63.2 \"/><polygon class=\"st1\" points=\"125 30 125 52.2 125 52.1 125 153.4 125 153.4 125 230 125 230 203.9 186.3 218.1 63.2 125 30 \"/><path class=\"st2\" d=\"M125 52.1L66.8 182.6h0 21.7 0l11.7-29.2h49.4l11.7 29.2h0 21.7 0L125 52.1 125 52.1 125 52.1 125 52.1 125 52.1zM142 135.4H108l17-40.9L142 135.4z\"/></svg>\n  {{title}}\n</h1>\n\n<br-dashboard></br-dashboard>\n\n<!--<router-outlet></router-outlet>-->\n"
 
 /***/ }),
 
