@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Book } from 'app/shared/book';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/retry';
 
 @Injectable()
 export class BookStoreService {
@@ -20,6 +21,8 @@ export class BookStoreService {
           rawBook.title,
           rawBook.description,
           rawBook.rating))
-      );
+      )
+      .retry(3);
+      // retryWhen
   }
 }

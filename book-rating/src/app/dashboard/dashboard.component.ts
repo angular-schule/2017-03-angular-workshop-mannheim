@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
       .subscribe(books => {
         this.books = books;
         this.reorderBooks();
-      });
+      }, e => { console.log('FEHLER', e); });
   }
 
   reorderBooks() {
