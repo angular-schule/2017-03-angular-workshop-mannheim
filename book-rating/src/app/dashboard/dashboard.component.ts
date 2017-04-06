@@ -20,9 +20,15 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.books = [
-      new Book('000', 'Angular', 'Zurück in die Zukunft', 2),
-      new Book('111', 'AngularJS 1.x', 'Oldie but Goldie', 3),
-      new Book('222', 'DAs andere Buch', 'Blah')
+      new Book('9783864903571',
+               'Angular',
+               'Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript - ab Angular 4', 5),
+      new Book('9783864901546',
+               'AngularJS',
+               'Eine praktische Einführung in das JavaScript-Framework', 3),
+      new Book('9783446426825',
+               'Die Kunst des klaren Denkens',
+               '52 Denkfehler, die Sie besser anderen überlassen')
     ];
     this.reorderBooks();
   }
