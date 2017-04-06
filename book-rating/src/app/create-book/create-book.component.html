@@ -1,4 +1,4 @@
-<form #myForm="ngForm">
+<form #myForm="ngForm" (ngSubmit)="add()">
   <div class="form-group">
     ISBN:
     <input class="form-control" name="isbn"
@@ -24,8 +24,8 @@
     [(ngModel)]="book.description"></textarea>
   </div>
 
-  <button class="btn btn-danger"
-    (click)="add();"
+  <button type="submit"
+     class="btn btn-danger"
     [disabled]="myForm.invalid"
     >Save</button>
 </form>
