@@ -1,5 +1,5 @@
-import { Book } from './../shared/book';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Book } from '../shared/book';
 
 @Component({
   selector: 'br-create-book',
@@ -7,16 +7,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent implements OnInit {
+  book: Book;
 
   @Output() bookCreated = new EventEmitter<Book>();
 
-  constructor() { }
-
   ngOnInit() {
+    this.book = Book.empty();
   }
 
-  add(isbn: HTMLFormElement, title: HTMLFormElement, description: HTMLFormElement) {
-    this.bookCreated.emit(new Book(isbn.value, title.value, description.value));
-    isbn.value = title.value = description.value = '';
+  add() {
+    this.bookCreated.emit(this.book);
+    this.book = Book.empty();
   }
 }
