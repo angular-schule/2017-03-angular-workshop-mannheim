@@ -23,6 +23,9 @@
     <textarea name="description" class="form-control"
     [(ngModel)]="book.description"></textarea>
   </div>
+
   <button class="btn btn-danger"
-    (click)="add()">Save</button>
+    (click)="add();"
+    [disabled]="myForm.invalid"
+    >Save</button>
 </form>
