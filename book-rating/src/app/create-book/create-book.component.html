@@ -1,11 +1,15 @@
-<form>
+<form #myForm="ngForm">
   <div class="form-group">
     ISBN:
     <input class="form-control" name="isbn"
     [(ngModel)]="book.isbn"
     required
     minlength="3"
-    #isbn> {{ isbn.className }}
+    #isbn="ngModel">
+
+    <div [hidden]="isbn.valid || isbn.pristine" class="alert alert-danger">
+      Bitte geben Sie eine gültige ISBN an!
+    </div>
   </div>
   <div class="form-group">
     Title:
