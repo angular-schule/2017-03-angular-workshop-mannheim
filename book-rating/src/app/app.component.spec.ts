@@ -21,12 +21,6 @@ describe('AppComponent', () => {
     });
   }));
 
-  it('should write xxx on button click', () => {
-    fixture.debugElement.nativeElement.querySelector('button').click();
-    fixture.detectChanges();
-    expect(app.title).toContain('XXX');
-  });
-
   it('should create the app', () => {
     expect(app).toBeTruthy();
   });

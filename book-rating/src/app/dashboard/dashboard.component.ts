@@ -1,3 +1,4 @@
+import { BookStoreService } from './../shared/book-store.service';
 import { Component, OnInit } from '@angular/core';
 import { BookComponent } from './../book/book.component';
 import 'rxjs/add/operator/filter';
@@ -11,7 +12,10 @@ import { Book } from './../shared/book';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  books: Book[];
+  books: Book[] = [];
+
+  constructor(private bs: BookStoreService) {
+  }
 
   add(book: Book) {
     this.books.push(book);
@@ -19,18 +23,11 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.books = [
-      new Book('9783864903571',
-               'Angular',
-               'Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript - ab Angular 4', 5),
-      new Book('9783864901546',
-               'AngularJS',
-               'Eine praktische Einführung in das JavaScript-Framework', 3),
-      new Book('9783446426825',
-               'Die Kunst des klaren Denkens',
-               '52 Denkfehler, die Sie besser anderen überlassen')
-    ];
-    this.reorderBooks();
+    this.bs.getAll()
+      .subscribe(books => {
+        this.books = books;
+        this.reorderBooks();
+      });
   }
 
   reorderBooks() {
