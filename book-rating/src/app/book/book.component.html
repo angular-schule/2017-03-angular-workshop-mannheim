@@ -16,5 +16,8 @@
   <button (click)="rateUp()"
           class="btn btn-danger glyphicon glyphicon-thumbs-up"
           [disabled]="book.rating > 4">
-    </button>
+  </button>
+
+  <a [routerLink]="['/book', book.isbn]" class="btn btn-info">Details</a>
+
 </div>
