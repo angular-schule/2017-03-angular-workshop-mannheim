@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { CounterActions } from './actions/counter.actions';
+
+import { NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,13 @@ import { CreateBookComponent } from './create-book/create-book.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgReduxModule
   ],
   providers: [
-    BookStoreService
+    BookStoreService,
+    DevToolsExtension,
+    CounterActions
   ],
   bootstrap: [AppComponent]
 })
