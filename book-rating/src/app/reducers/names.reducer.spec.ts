@@ -1,4 +1,5 @@
 import { reducer } from './names.reducer';
+import * as Immutable from 'seamless-immutable';
 
 fdescribe('names reducer', () => {
   it('should count names', () => {
@@ -8,7 +9,9 @@ fdescribe('names reducer', () => {
       'Ralph', 'John',
       'Richard'];
 
-    const expected = names.reduce(reducer, {});
+    const saveAcc = Immutable({});
+
+    const expected = names.reduce(reducer, saveAcc);
 
     expect(expected).toEqual({
       'Erich': 1,

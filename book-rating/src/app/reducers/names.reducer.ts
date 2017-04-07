@@ -1,8 +1,10 @@
 export let reducer = (acc, name) => {
 
   const count = acc[name];
-  acc[name] = count ? count + 1 : 1;
-  return acc;
+  // VORHER: acc[name] = count ? count + 1 : 1;
+  
+  const newAcc = acc.set(name, count ? count + 1 : 1);
+  return newAcc;
 };
 
 // Expected
