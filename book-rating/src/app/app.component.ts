@@ -1,3 +1,6 @@
+import { rootReducer } from './reducers/rootReducer';
+import { IAppState } from './reducers/types';
+import { NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +10,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Book Rating';
+
+  constructor(
+    private ngRedux: NgRedux<IAppState>,
+    private devTools: DevToolsExtension) {
+
+    this.ngRedux.configureStore(
+      rootReducer,
+      {} as IAppState,
+      [], // middlewares
+      devTools.isEnabled() ? [devTools.enhancer()] : []
+    );
+
+  }
 }
