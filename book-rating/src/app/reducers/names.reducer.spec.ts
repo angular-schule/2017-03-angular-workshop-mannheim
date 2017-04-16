@@ -1,7 +1,7 @@
 import { reducer } from './names.reducer';
-import * as Immutable from 'seamless-immutable';
+import * as si from 'seamless-immutable';
 
-fdescribe('names reducer', () => {
+describe('names reducer', () => {
   it('should count names', () => {
 
     const names = [
@@ -9,7 +9,7 @@ fdescribe('names reducer', () => {
       'Ralph', 'John',
       'Richard'];
 
-    const saveAcc = Immutable({});
+    const saveAcc = si.from({});
 
     const expected = names.reduce(reducer, saveAcc);
 

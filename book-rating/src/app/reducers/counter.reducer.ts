@@ -14,7 +14,7 @@ export function counterReducer(
   switch (action.type) {
 
     case CounterActions.INCREMENT_COUNTER:
-      return state.set('current', state.current + 1);
+      return (<any>state).set('current', state.current + 1);
 
   default:
     return state;
